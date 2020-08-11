@@ -12,6 +12,6 @@ to {
 	opacity:1;
 }
 `
-export const fadeIn =({time = '1s',type = 'ease '}={})=>css`
+export const fadeIn =({time = '0.5s',type = 'ease '}={})=>css`
 animation:${time} ${fadeInKeyfames} ${type};
 `

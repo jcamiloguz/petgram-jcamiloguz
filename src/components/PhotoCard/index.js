@@ -4,7 +4,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { useNearScreen } from '../../hooks/useNearScreen'
 import { FavButton } from '../FavButton'
 import { ToggleLikeMutation } from '../../container/ToggleLikeMutation'
-
+import {Link } from '@reach/router'
 const DEFAULT__IMAGE =
   'https://images.unsplash.com/photo-1518001589401-1743b61d1def?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
 
@@ -17,11 +17,11 @@ const DEFAULT__IMAGE =
 		<Article ref={ref}>
       {show && (
 				<Fragment>
-          <a href={`/?detail=${id}`}>
+          <Link to={`/detail/${id}`}>
             <ImgWrapper className="">
               <Img src={src} alt="" />
             </ImgWrapper>
-          </a>
+          </Link>
 					<ToggleLikeMutation >
 						{
 							(toggleLike)=>{
