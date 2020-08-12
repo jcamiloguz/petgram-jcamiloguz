@@ -9,10 +9,7 @@ import { NotRegisterUser } from './pages/NotRegisterUser'
 import { Detail } from './pages/Detail'
 
 import { Router } from '@reach/router'
-
-const UserLogged = ({ children }) => {
-  return children({ isAuth: true })
-}
+import Context from './Context'
 export const App = () => {
   const urlParams = new window.URLSearchParams(window.location.search)
   const detailId = urlParams.get('detail')
@@ -25,7 +22,7 @@ export const App = () => {
         <Home path="/pet/:categoryId" />
         <Detail path="/detail/:detailId" />
       </Router>
-      <UserLogged>
+      <Context.Consumer>
         {({ isAuth }) =>
           isAuth ? (
             <Router>
@@ -39,7 +36,7 @@ export const App = () => {
             </Router>
           )
         }
-      </UserLogged>
+      </Context.Consumer>
       <NavBar />
     </>
   )
