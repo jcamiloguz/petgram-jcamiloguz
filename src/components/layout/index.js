@@ -6,7 +6,7 @@ export const Layout = ({ children, title, subtitle }) => {
     <>
       <Helmet>
         {title && <title>{title} | Petgram 🐶</title>}
-        {subtitle && <subtitle>{subtitle} | Petgram 🐶</subtitle>}
+        {subtitle && <meta name='description' content={`${subtitle} | Petgram 🐶`}/>}
       </Helmet>
       <Div className="">
         {title && <Title>{title}</Title>}
